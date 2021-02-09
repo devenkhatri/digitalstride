@@ -1,25 +1,46 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "the-digital-stride",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Thought Leaders in Digital",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Harshna Goratela",
   "dependencies": {
+    "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.4.2",
+    "bulma": "^0.9.1",
+    "formik": "^2.2.6",
     "gatsby": "^2.31.1",
     "gatsby-image": "^2.10.0",
+    "gatsby-paginate": "^1.1.1",
+    "gatsby-plugin-google-tagmanager": "^2.8.0",
     "gatsby-plugin-manifest": "^2.11.0",
+    "gatsby-plugin-nprogress": "^2.7.0",
     "gatsby-plugin-offline": "^3.9.0",
     "gatsby-plugin-react-helmet": "^3.9.0",
+    "gatsby-plugin-sass": "^2.8.0",
     "gatsby-plugin-sharp": "^2.13.2",
+    "gatsby-plugin-sitemap": "^2.9.0",
+    "gatsby-source-contentful": "^4.6.1",
     "gatsby-source-filesystem": "^2.10.0",
+    "gatsby-transformer-remark": "^2.16.0",
     "gatsby-transformer-sharp": "^2.11.0",
+    "lodash": "^4.17.20",
+    "lodash-webpack-plugin": "^0.11.5",
+    "node-sass": "4.14.1",
     "prop-types": "^15.7.2",
+    "query-string": "^6.13.7",
     "react": "^16.12.0",
+    "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-share": "^4.3.1",
+    "sharp": "^0.27.1",
+    "trim-right": "^1.0.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "yup": "^0.27.0"
   },
   "devDependencies": {
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "dotenv": "^8.2.0"
   },
   "keywords": [
     "gatsby"
