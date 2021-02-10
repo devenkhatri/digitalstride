@@ -6,13 +6,13 @@ import HeroSection from '../components/HeroSection'
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <HeroSection title={`Hi People !!!`} content={`Work in progress...`} className={'is-medium is-info'} />
+    <HeroSection title={`Hi People !!!`} content={`Work in progress...`} className={'is-medium is-bold is-primary'} />
     
     <section className='section section--gradient'>
       <div className='container'>
         <div className='section'>
           <div className='columns'>
-            <div className='column is-10 is-offset-1'>
+            <div className='column is-10 is-offset-0'>
               <div className='content'>
                 <div>
                   <h3 className='has-text-weight-semibold is-size-2'>Digital Stride is coming soon</h3>

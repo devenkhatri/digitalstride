@@ -39,9 +39,8 @@ const SearchBox = props => {
       <div className='navbar-dropdown'>
         {active && results.length
           ? results
-            .filter(page => page.templateKey === 'article-page')
             .map(page => (
-              <Link className='navbar-item' key={page.id} to={page.slug}>
+              <Link className='navbar-item' key={page.id} to={`/${page.slug}`}>
                 {page.title}
               </Link>
             ))

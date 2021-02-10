@@ -37,7 +37,7 @@ const NavBar = () => {
           <div className={`navbar-menu ${active ? 'is-active' : ''}`} id='navMenu'>
 
             <div className='navbar-end'>
-              {/* <SearchBox searchIndex={data.siteSearchIndex.index} /> */}
+              <SearchBox searchIndex={data.siteSearchIndex.index} />
               <Link className='navbar-item' to='/about-us'>
                 About
               </Link>

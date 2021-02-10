@@ -86,24 +86,22 @@ module.exports = {
         icon: config.manifest.icon, // This path is relative to the root of the site.
       },
     },
-    // {
-    //   resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
-    //   options: {
-    //     // Fields to index
-    //     fields: [`title`, `tags`, `author`, `slug`],
-    //     // How to resolve each field`s value for a supported node type
-    //     resolvers: {
-    //       // For any node of type MarkdownRemark, list how to resolve the fields` values
-    //       MarkdownRemark: {
-    //         title: node => node.frontmatter.title,
-    //         author: node => node.frontmatter.author,
-    //         tags: node => node.frontmatter.tags,
-    //         slug: node => node.fields.slug,
-    //         templateKey: node => node.frontmatter.templateKey,
-    //       },
-    //     },
-    //   },
-    // },
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        // Fields to index
+        fields: [`title`, `body`, `slug`],
+        // How to resolve each field`s value for a supported node type
+        resolvers: {
+          // For any node of type contentfulPages, list how to resolve the fields` values
+          ContentfulPages: {
+            title: node => node.title,
+            slug: node => node.slug,
+            body: node => node.body.raw,
+          },
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // {

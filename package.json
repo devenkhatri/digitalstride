@@ -5,6 +5,9 @@
   "version": "0.1.0",
   "author": "Harshna Goratela",
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^14.1.2",
+    "@contentful/rich-text-react-renderer": "^14.1.2",
+    "@contentful/rich-text-types": "^14.1.2",
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.4.2",
     "bulma": "^0.9.1",
     "formik": "^2.2.6",

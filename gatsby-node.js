@@ -3,7 +3,7 @@ const path = require('path')
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
-      type siteSearchIndex implements Node {
+      type siteSearchIndex1 implements Node {
         index: String
       }
     `
