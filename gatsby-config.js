@@ -30,6 +30,7 @@ module.exports = {
     description: config.site.description,
     keywords: config.site.keywords,
     author: config.site.author,
+    siteUrl: config.site.siteUrl,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -6,6 +6,7 @@ module.exports = {
         author: `@harshnagoratela`,
         themeColor: '#348cb2',// Used for setting manifest and progress theme colors.
         logo: '/icons/website-icon.png', // Logo used for SEO
+        siteUrl: "https://thedigitalstride.com",
     },
     manifest: {
         name: 'The Digital Stride',
