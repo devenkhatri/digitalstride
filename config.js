@@ -10,7 +10,7 @@ module.exports = {
     },
     manifest: {
         name: 'The Digital Stride',
-        shortName: 'TDS', // max 12 characters
+        shortName: 'DigitalStride', // max 12 characters
         startUrl: '/',
         backgroundColor: '#348cb2', // Used for setting manifest background color.  
         display: 'standalone',

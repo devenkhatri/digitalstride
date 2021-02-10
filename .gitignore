@@ -102,7 +102,7 @@ public
 
 # TernJS port file
 .tern-port
-public/index.html
+public/*
 .DS_Store
 src/.DS_Store
 src/components/.DS_Store
