@@ -1,25 +1,13 @@
 import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import HeroSection from '../components/HeroSection'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <section className='hero is-primary is-bold is-medium'>
-      <div className='hero-body'>
-        <div className='container'>
-          <div className='columns'>
-            <div className='column is-10 is-offset-1'>
-              <div className='section'>
-                <h1 className='title'>
-                  Hi people
-                  </h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <HeroSection title={`Hi People !!!`} content={`Work in progress...`} className={'is-medium is-info'} />
+    
     <section className='section section--gradient'>
       <div className='container'>
         <div className='section'>
@@ -27,11 +15,9 @@ const IndexPage = () => (
             <div className='column is-10 is-offset-1'>
               <div className='content'>
                 <div>
-                  <h3 className='has-text-weight-semibold is-size-2'>
-                    Subsection
-                    </h3>
-                  <p>Welcome to your new Gatsby site.</p>
-                  <p>Now go build something great.</p>
+                  <h3 className='has-text-weight-semibold is-size-2'>Digital Stride is coming soon</h3>
+                  <p>Welcome to our new site.</p>
+                  <p>We are building something great.</p>
                 </div>
               </div>
             </div>
