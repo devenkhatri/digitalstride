@@ -21,8 +21,9 @@ const NavBar = () => {
       render={data => (
         <nav className='navbar is-fixed-top' aria-label='main navigation'>
           <div className='navbar-brand'>
-            <Link to='/' className='navbar-item'>
-              <strong>Digital</strong>&nbsp;Stride
+            <Link to='/' className='navbar-item' >
+              <img src="/images/logo-2.png" alt="logo" width="200rem" />
+              {/* <strong>Digital</strong>&nbsp;Stride */}
             </Link>
             <button
               className={`button navbar-burger ${active ? 'is-active' : ''}`}

@@ -7,7 +7,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <HeroSection title={`Hi People !!!`} content={`Work in progress...`} className={'is-medium is-bold is-primary'} />
-    
+
     <section className='section section--gradient'>
       <div className='container'>
         <div className='section'>
