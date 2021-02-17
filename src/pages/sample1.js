@@ -1,8 +1,9 @@
 import React from "react"
+import Layout from "../components/Layout"
 
 const Samples = () => {
     return (
-        <>
+        <Layout>
             <section className="is-relative">
                 <div className="section">
                     <div className="container">
@@ -294,7 +295,7 @@ const Samples = () => {
                 </div>
             </section>
 
-        </>
+        </Layout>
     );
 }
 

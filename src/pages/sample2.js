@@ -1,8 +1,9 @@
 import React from 'react';
+import Layout from "../components/Layout"
 
 const Sample2 = () => {
     return(
-        <>
+        <Layout>
         <div className="header-wrapper" id="home">
       <section className="hero is-large">
         <nav className="navbar is-transparent is-hidden-desktop">
@@ -465,7 +466,7 @@ const Sample2 = () => {
         <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
       </p>
     </div>
-    </>
+    </Layout>
     );
 }
 
