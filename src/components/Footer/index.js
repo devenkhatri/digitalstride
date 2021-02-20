@@ -5,12 +5,12 @@ const Footer = (props) => {
 
   return (
     <footer className='footer pb-5'>
-        <div class="columns">
-          <div class="column">
-            <img src="/images/logo-1.png" alt="logo" width="150rem" />
-          </div>
-          <div class="column">
-            <div className='content has-text-right'>
+        <div className="columns">
+          {/* <div className="column is-size-4">
+            <span className="has-text-primary">Digital</span>&nbsp;<span className="has-text-dark">Stride</span>
+          </div> */}
+          <div className="column">
+            <div className='content has-text-centered'>
               <p>
                 {copyright}
               </p>
