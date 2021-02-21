@@ -8,7 +8,7 @@ export const HeroSection = (props) => {
       <div className='hero-body'>
         <div className='container'>
           <div className='columns'>
-            <div className='column is-10 is-offset-0'>
+            <div className='column is-12 is-offset-0'>
               <div className='section'>
                 <h1 className='title'>{title}</h1>
                 <p>{content}</p>

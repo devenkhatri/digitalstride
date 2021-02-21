@@ -18,7 +18,7 @@ const GatsbyImage = () => {
     query {
       placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid(maxWidth: 300, grayscale: true) {
             ...GatsbyImageSharpFluid
           }
         }
