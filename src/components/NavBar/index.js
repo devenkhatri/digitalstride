@@ -16,6 +16,22 @@ const NavBar = () => {
                 siteSearchIndex {
                     index
                 }
+                allContentfulPages(filter: {addToMenu: {eq: true}}) {
+                  edges {
+                    node {
+                      title
+                      slug
+                    }
+                  }
+                }
+                allContentfulServices {
+                  edges {
+                    node {
+                      title
+                      slug
+                    }
+                  }
+                }
             }
         `}
       render={data => (
@@ -36,11 +52,24 @@ const NavBar = () => {
           </div>
           <div className={`navbar-menu ${active ? 'is-active' : ''}`} id='navMenu'>
 
-            <div className='navbar-end'>
+            <div className='navbar-end'>   
+              {data.allContentfulServices && data.allContentfulServices.edges && data.allContentfulServices.edges.length>0 &&
+                <div className="navbar-item has-dropdown is-hoverable">
+                  <a className="navbar-link">Services</a>
+                  <div class="navbar-dropdown">
+                    {data.allContentfulServices.edges.map(({node}, index)=>(
+                      <Link className='navbar-item' key={index} to={`/service/${node.slug}`}>{node.title}</Link>
+                    ))}
+                  </div>
+                </div>
+              }           
+              {data.allContentfulPages && data.allContentfulPages.edges.map(({node}, index) => (
+                <Link className='navbar-item' key={index} to={`/${node.slug}`}>{node.title}</Link>
+              ))}
               <SearchBox searchIndex={data.siteSearchIndex.index} />
-              <Link className='navbar-item' to='/about-us'>
+              {/* <Link className='navbar-item' to='/about-us'>
                 About
-              </Link>
+              </Link> */}
               {/* <Link className='navbar-item' to='/pricing'>
                 Pricing
               </Link>

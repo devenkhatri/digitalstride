@@ -8,8 +8,8 @@ import ContactForm from '../components/ContactForm'
 
 const PageTemplate = (props) => {
   const { data: { contentfulPages: { title, slug, body } } } = props
-  console.log(JSON.parse(body.raw))
-  console.log(slug, slug.indexOf("contact"))
+  // console.log(JSON.parse(body.raw))
+  // console.log(slug, slug.indexOf("contact"))
   const isContactPage = slug && slug.indexOf("contact")>=0;
   return (
     <Layout>

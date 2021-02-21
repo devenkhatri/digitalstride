@@ -8,10 +8,10 @@ const ProgressiveImageContainer = ({ image, alt, className }) => (typeof image =
     src={image}
     alt={alt}
   />
-  : (_.get(image, ['childImageSharp', 'fluid']))
+  : (_.get(image, ['fluid']))
     ? <Img
       className={className}
-      fluid={_.get(image, ['childImageSharp', 'fluid'])}
+      fluid={_.get(image, ['fluid'])}
       alt={alt}
     />
     : <img
