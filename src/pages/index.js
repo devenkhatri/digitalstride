@@ -2,30 +2,35 @@ import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import HeroSection from '../components/HeroSection'
+import Offerings from '../components/Offerings'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <HeroSection title={`Hi People !!!`} content={`Work in progress...`} className={'is-medium is-bold is-primary'} />
+const IndexPage = () => {
+  const offerings = [
+    {title: "one", image: "https://shuffle.dev/metis-assets/illustrations/work-tv.png", url:"/", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Pretium lectus quam id leo in vitae turpis massa sed. Duis at tellus at urna condimentum mattis pellentesque id. Velit egestas dui id ornare."},
+    {title: "two", image: "https://shuffle.dev/metis-assets/illustrations/people-watching.png", url:"/", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Pretium lectus quam id leo in vitae turpis massa sed. Duis at tellus at urna condimentum mattis pellentesque id. Velit egestas dui id ornare."},
+    {title: "three", image: "https://bulma.dev/placeholder/pictures/bg_4-3.svg?primary=ffd1b2", url:"/", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Pretium lectus quam id leo in vitae turpis massa sed. Duis at tellus at urna condimentum mattis pellentesque id. Velit egestas dui id ornare."},
+    {title: "four", image: "https://shuffle.dev/metis-assets/illustrations/financial-report.png", url:"/", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Pretium lectus quam id leo in vitae turpis massa sed. Duis at tellus at urna condimentum mattis pellentesque id. Velit egestas dui id ornare."},
+  ];
+  const offerings2 = [
+    {title: "five", image: "https://bulma.dev/placeholder/pictures/bg_4-3.svg?primary=11ffb2", url:"/", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Pretium lectus quam id leo in vitae turpis massa sed. Duis at tellus at urna condimentum mattis pellentesque id. Velit egestas dui id ornare."},
+    {title: "six", image: "https://bulma.dev/placeholder/pictures/bg_4-3.svg?primary=11d1ff", url:"/", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Pretium lectus quam id leo in vitae turpis massa sed. Duis at tellus at urna condimentum mattis pellentesque id. Velit egestas dui id ornare."},
+    {title: "seven", image: "https://bulma.dev/placeholder/pictures/bg_4-3.svg?primary=ffd1b2", url:"/", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Pretium lectus quam id leo in vitae turpis massa sed. Duis at tellus at urna condimentum mattis pellentesque id. Velit egestas dui id ornare."},
+    {title: "eight", image: "https://bulma.dev/placeholder/pictures/bg_4-3.svg?primary=44f1b4", url:"/", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Pretium lectus quam id leo in vitae turpis massa sed. Duis at tellus at urna condimentum mattis pellentesque id. Velit egestas dui id ornare."},
+  ];
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <HeroSection title={`Hi People !!!`} content={`Creation of awesome site's work is in progress...`} className={'is-small is-bold is-primary'} image="https://shuffle.dev/metis-assets/illustrations/working-from-airport.png" />
 
-    <section className='section section--gradient'>
-      <div className='container'>
-        <div className='section'>
-          <div className='columns'>
-            <div className='column is-10 is-offset-0'>
-              <div className='content'>
-                <div>
-                  <h3 className='has-text-weight-semibold is-size-2'>Digital Stride is coming soon</h3>
-                  <p>Welcome to our new site.</p>
-                  <p>We are building something great.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+      <section className='section section--gradient'>
+        <div className='container'>
+          <h2 className="title has-text-centered mb-6">Some of our awesome features</h2>
+          <Offerings gridItems={offerings}/>
+          <Offerings gridItems={offerings2}/>
         </div>
-      </div>
-    </section>
-  </Layout>
-)
+      </section>
+    </Layout>
+  )
+}
 
 export default IndexPage

@@ -4,19 +4,22 @@ import ProgressiveImageContainer from '../ProgressiveImageContainer'
 
 const Offerings = (props) => {
   const { gridItems } = props
+  const gridCol = 12 / (gridItems?gridItems.length:1)
   return (
     <div className='columns is-multiline'>
       {gridItems.map((item, idx) => (
-        <div key={idx} className='column is-6' style={{ borderRadius: '5px' }}>
-          <section className='section'>
-            <p className='has-text-centered'>
-              <ProgressiveImageContainer
-                image={item.image}
-                alt={`gatsby-business-starter-${idx}`}
-              />
-            </p>
-            <p>{item.text}</p>
-          </section>
+        <div key={idx} className={`column is-${gridCol}`} >
+          <div className="card">
+            <div className="card-image"><figure className="image is-4by3"><ProgressiveImageContainer
+              image={item.image}
+              alt={item.title}
+            /></figure></div>
+            <div className="card-content">
+              <h4 className="title is-spaced is-4">{item.title}</h4>
+              <p className="subtitle is-6 has-text-justified">{item.text}</p>
+              <a href={item.url}>Read more</a>
+            </div>
+          </div>
         </div>
       ))}
     </div>
