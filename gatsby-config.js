@@ -104,6 +104,10 @@ module.exports = {
             slug: node => node.slug,
             body: node => node.body.raw,
           },
+          ContentfulServices: {
+            title: node => node.title,
+            slug: node => 'service/'+node.slug,            
+          },
         },
       },
     },
