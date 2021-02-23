@@ -15,7 +15,7 @@ export const HeroSection = (props) => {
               {typeof content === "string" &&
                 <p className="subtitle">{content}</p>
               }
-              {typeof content !== "string" && content.raw &&
+              {typeof content !== "string" && content && content.raw &&
                 <ContentfulHTMLContent content={JSON.parse(content.raw)}/>
               }
               </div>
