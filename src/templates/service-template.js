@@ -11,7 +11,7 @@ const ServiceTemplate = (props) => {
   return (
     <Layout>
       <SEO title={title} />
-      <HeroSection title={title} content={childContentfulServicesExcerptTextNode.childMarkdownRemark.rawMarkdownBody} className={'is-small is-bold is-primary'} image={serviceImage.fluid.src}/>
+      <HeroSection title={title} content={childContentfulServicesExcerptTextNode.childMarkdownRemark.rawMarkdownBody} className={'is-small is-bold is-primary'} image={serviceImage}/>
       <section className="section">
         <div className="container py-4">
           <div className="columns">

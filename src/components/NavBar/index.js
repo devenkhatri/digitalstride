@@ -56,7 +56,7 @@ const NavBar = () => {
               {data.allContentfulServices && data.allContentfulServices.edges && data.allContentfulServices.edges.length>0 &&
                 <div className="navbar-item has-dropdown is-hoverable">
                   <a className="navbar-link">Services</a>
-                  <div class="navbar-dropdown">
+                  <div className="navbar-dropdown">
                     {data.allContentfulServices.edges.map(({node}, index)=>(
                       <Link className='navbar-item' key={index} to={`/service/${node.slug}`}>{node.title}</Link>
                     ))}

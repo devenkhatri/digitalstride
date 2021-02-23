@@ -6,14 +6,16 @@ import HeroSection from '../components/HeroSection'
 import Offerings from '../components/Offerings'
 
 const IndexPage = (props) => {
-  const { data: { allContentfulServices } } = props;
-  console.log(allContentfulServices)
+  const { data: { contentfulHomepage, allContentfulServices } } = props;
+  
+  const heroImage = (contentfulHomepage && contentfulHomepage.heroImage) || "https://shuffle.dev/metis-assets/illustrations/working-from-airport.png";
+  const heroText = (contentfulHomepage && contentfulHomepage.heroText) || `Creation of awesome site's work is in progress...`
   const allServices = [];
   if(allContentfulServices){
     allContentfulServices.edges.map(({node})=>{
       allServices.push({
         title: node.title,
-        image: node.serviceImage.fluid.src,
+        image: node.serviceImage,
         url:`/service/${node.slug}`,
         text: node.childContentfulServicesExcerptTextNode.childMarkdownRemark.rawMarkdownBody
       });
@@ -34,7 +36,7 @@ const IndexPage = (props) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <HeroSection title={`Hi People !!!`} content={`Creation of awesome site's work is in progress...`} className={'is-small is-bold is-primary'} image="https://shuffle.dev/metis-assets/illustrations/working-from-airport.png" />
+      <HeroSection className={'is-small is-bold is-light'} content={heroText} image={heroImage} />
 
       <section className='section section--gradient'>
         <div className='container'>
@@ -50,6 +52,16 @@ export default IndexPage
 
 export const homePageQuery = graphql`
   query HomePageTemplate {
+    contentfulHomepage {
+      heroText {
+        raw
+      }
+      heroImage {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+    }
     allContentfulServices {
       edges {
         node {

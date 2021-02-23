@@ -1,8 +1,9 @@
 import React from 'react'
+import ProgressiveImageContainer from '../ProgressiveImageContainer'
+import { ContentfulHTMLContent } from '../Content'
 
 export const HeroSection = (props) => {
   const { title, content, image, className } = props
-
   return (
     <section className={`hero ${className}`}>
       <div className='hero-body'>
@@ -11,14 +12,22 @@ export const HeroSection = (props) => {
             <div className={`column is-${image ? "6" : "12"}`}>
               <div className="section">
               <h2 className="title is-spaced">{title}</h2>
-              <p className="subtitle">{content}</p>
+              {typeof content === "string" &&
+                <p className="subtitle">{content}</p>
+              }
+              {typeof content !== "string" && content.raw &&
+                <ContentfulHTMLContent content={JSON.parse(content.raw)}/>
+              }
               </div>
             </div>
             {image &&
               <div className="column is-5 is-offset-1">
-                <div className="is-flex is-justify-content-center is-align-items-center">
-                  <img className="is-max-w-lg" src={image} alt={title} />
-                </div>
+                <figure className="image">
+                  <ProgressiveImageContainer
+                    image={image}
+                    alt={title}
+                  />
+                </figure>
               </div>
             }
           </div>

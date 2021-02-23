@@ -48,9 +48,9 @@ const ContactForm = (props) => {
         </div>
       </div>
 
-      <div class="field">
-        <div class="control">
-          <button class="button is-primary is-fullwidth" type="submit">Submit</button>
+      <div className="field">
+        <div className="control">
+          <button className="button is-primary is-fullwidth" type="submit">Submit</button>
         </div>
       </div>
     </form>
