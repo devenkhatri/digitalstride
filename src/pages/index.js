@@ -4,6 +4,7 @@ import SEO from "../components/SEO"
 import { graphql } from 'gatsby'
 import HeroSection from '../components/HeroSection'
 import Offerings from '../components/Offerings'
+import TechStack from '../components/TechStack'
 
 const IndexPage = (props) => {
   const { data: { contentfulHomepage, allContentfulServices } } = props;
@@ -41,20 +42,9 @@ const IndexPage = (props) => {
       <HeroSection className={'is-small is-bold is-light'} content={heroText} image={heroImage} />
 
       <section className='section section--gradient'>
-        <div className='container'>
-          <h2 className="title has-text-centered mb-6">Some of our awesome features</h2>
+        <div className='container'>          
           <Offerings gridItems={allServices}/>
-          <h2 className="title has-text-centered mb-1 mt-4">Tech Stack</h2>
-          <h4 className="sub-title has-text-centered mb-5">Some of the major technology stacks, we expertise in...</h4>
-          <div className='columns box is-multiline is-centered is-vcentered'>
-            {logos && logos.map((item)=>(
-              <div className='column is-2 is-narrow has-text-centered'>
-              <figure className="image is-128x128">
-                <img src={item.image} title={item.title} />
-              </figure>
-            </div>
-            ))}  
-          </div>
+          <TechStack logos={logos} />
         </div>
       </section>
     </Layout>

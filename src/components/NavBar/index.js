@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import SearchBox from '../SearchBox'
+import config from '../../../config'
 
 const NavBar = () => {
   const [active, setActive] = useState(false)
@@ -38,6 +39,7 @@ const NavBar = () => {
         <nav className='navbar is-fixed-top' aria-label='main navigation'>
           <div className='navbar-brand'>
             <Link to='/' className='navbar-item is-size-4' >
+              <img src={config.site.logo} className="pr-2" />
               <span className="has-text-primary">Digital</span>&nbsp;<span className="has-text-dark">Stride</span>
             </Link>
             <button
