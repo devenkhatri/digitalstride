@@ -1,13 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import SEO from "../components/SEO"
-import { ContentfulHTMLContent } from '../components/Content'
+import { HTMLContent } from '../components/Content'
 import Layout from '../components/Layout'
 import HeroSection from '../components/HeroSection'
 import Img from 'gatsby-image'
 
 const ServiceTemplate = (props) => {
-  const { data: { contentfulServices: { title, childContentfulServicesExcerptTextNode, serviceImage, description } } } = props
+  const { data: { contentfulServices: { title, childContentfulServicesExcerptTextNode, childContentfulServicesDescriptionTextNode, serviceImage, description } } } = props
   return (
     <Layout>
       <SEO title={title} />
@@ -17,8 +17,8 @@ const ServiceTemplate = (props) => {
           <div className="columns">
             <div className={`column`}>
               {/* <Img fluid={serviceImage.fluid} /> */}
-              {description &&
-                <ContentfulHTMLContent content={JSON.parse(description.raw)} className={"has-text-justified"} />
+              {childContentfulServicesDescriptionTextNode &&
+                <HTMLContent content={childContentfulServicesDescriptionTextNode.childMarkdownRemark.html} className={"has-text-justified"} />
               }
             </div>            
           </div>
@@ -45,8 +45,10 @@ export const serviceTemplateQuery = graphql`
           ...GatsbyContentfulFluid
         }
       }
-      description {
-        raw
+      childContentfulServicesDescriptionTextNode {
+        childMarkdownRemark {
+          html
+        }
       }
     }
   }

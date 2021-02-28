@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import {HTMLContent} from '../Content'
 import ProgressiveImageContainer from '../ProgressiveImageContainer'
 import _ from 'lodash'
 
@@ -19,7 +19,7 @@ const Offerings = (props) => {
                 />
               </figure>
               <p className="title pt-5 "><a className="has-text-dark" href={item.url}>{item.title}</a></p>
-              <div className="content has-text-justified">{item.text}</div>
+              <HTMLContent className="has-text-justified" content={item.text} />
             </article>
           </div>
         ))}

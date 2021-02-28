@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import SEO from "../components/SEO"
-import { ContentfulHTMLContent } from '../components/Content'
+import { ContentfulHTMLContent, HTMLContent } from '../components/Content'
 import Layout from '../components/Layout'
 import HeroSection from '../components/HeroSection'
 import ContactForm from '../components/ContactForm'
@@ -19,7 +19,7 @@ const PageTemplate = (props) => {
         <div className="container py-4">
           <div className="columns">
             <div className={`column ${isContactPage?"is-6":""}`}>
-              <ContentfulHTMLContent content={JSON.parse(body.raw)} className={"has-text-justified"} />
+              <HTMLContent content={body.childMarkdownRemark.html} className={"has-text-justified"} />
             </div>
             {isContactPage &&
               <div className="column is-5 is-offset-1">
@@ -41,7 +41,9 @@ export const pageTemplateQuery = graphql`
       title
       slug
       body {
-        raw
+        childMarkdownRemark {
+          html
+        }
       }
     }
   }

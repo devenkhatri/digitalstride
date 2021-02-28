@@ -33,6 +33,10 @@ module.exports = {
     siteUrl: config.site.siteUrl,
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-contentful',
+      options: contentfulConfig,
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -49,11 +53,7 @@ module.exports = {
     },
     'gatsby-transformer-remark',
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: 'gatsby-source-contentful',
-      options: contentfulConfig,
-    },
+    `gatsby-plugin-sharp`,    
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-sass`,

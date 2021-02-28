@@ -5,12 +5,19 @@ import { graphql } from 'gatsby'
 import HeroSection from '../components/HeroSection'
 import Offerings from '../components/Offerings'
 import TechStack from '../components/TechStack'
+import CallAction from '../components/CallAction'
 
 const IndexPage = (props) => {
   const { data: { contentfulHomepage, allContentfulServices } } = props;
   
   const heroImage = (contentfulHomepage && contentfulHomepage.heroImage) || "https://shuffle.dev/metis-assets/illustrations/working-from-airport.png";
   const heroText = (contentfulHomepage && contentfulHomepage.heroText) || `Creation of awesome site's work is in progress...`
+  const callAction = {
+    heading: contentfulHomepage.callActionHeading,
+    title: contentfulHomepage.callActionTitle,
+    subtitle: contentfulHomepage.callActionSubtitle,
+    buttontext: contentfulHomepage.callActionButtonText,
+  };
   const allServices = [];
   if(allContentfulServices){
     allContentfulServices.edges.map(({node})=>{
@@ -18,7 +25,7 @@ const IndexPage = (props) => {
         title: node.title,
         image: node.serviceImage,
         url:`/service/${node.slug}`,
-        text: node.childContentfulServicesExcerptTextNode.childMarkdownRemark.rawMarkdownBody
+        text: node.childContentfulServicesExcerptTextNode.childMarkdownRemark.html
       });
     });
   }
@@ -42,9 +49,10 @@ const IndexPage = (props) => {
       <HeroSection className={'is-small is-bold is-light'} content={heroText} image={heroImage} />
 
       <section className='section section--gradient'>
-        <div className='container'>          
-          <Offerings gridItems={allServices}/>
-          <TechStack logos={logos} />
+        <div className='container'>
+          <Offerings gridItems={allServices} />
+          <TechStack logos={logos} />  
+          <CallAction content={callAction} />        
         </div>
       </section>
     </Layout>
@@ -64,6 +72,10 @@ export const homePageQuery = graphql`
           ...GatsbyContentfulFluid
         }
       }
+      callActionHeading
+      callActionTitle
+      callActionSubtitle
+      callActionButtonText
     }
     allContentfulServices {
       edges {
@@ -72,7 +84,7 @@ export const homePageQuery = graphql`
           slug
           childContentfulServicesExcerptTextNode {
             childMarkdownRemark {
-              rawMarkdownBody
+              html
             }
           }
           serviceImage {
