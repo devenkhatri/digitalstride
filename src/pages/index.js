@@ -46,7 +46,7 @@ const IndexPage = (props) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <HeroSection className={'is-small is-bold is-light'} content={heroText} image={heroImage} />
+      <HeroSection className={'is-small is-bold is-light'} content={heroText.childMarkdownRemark.html} image={heroImage} />
 
       <section className='section section--gradient'>
         <div className='container'>
@@ -65,7 +65,9 @@ export const homePageQuery = graphql`
   query HomePageTemplate {
     contentfulHomepage {
       heroText {
-        raw
+        childMarkdownRemark {
+          html
+        }
       }
       heroImage {
         fluid {
