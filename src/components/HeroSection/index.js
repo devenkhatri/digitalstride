@@ -1,6 +1,6 @@
 import React from 'react'
 import ProgressiveImageContainer from '../ProgressiveImageContainer'
-import { ContentfulHTMLContent } from '../Content'
+import { HTMLContent } from '../Content'
 
 export const HeroSection = (props) => {
   const { title, content, image, className } = props
@@ -12,12 +12,7 @@ export const HeroSection = (props) => {
             <div className={`column is-${image ? "6" : "12"}`}>
               <div className="section">
               <h2 className="title is-spaced">{title}</h2>
-              {typeof content === "string" &&
-                <p className="subtitle">{content}</p>
-              }
-              {typeof content !== "string" && content && content.raw &&
-                <ContentfulHTMLContent content={JSON.parse(content.raw)}/>
-              }
+              <HTMLContent className="subtitle" content={content} />
               </div>
             </div>
             {image &&
