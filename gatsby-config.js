@@ -102,7 +102,7 @@ module.exports = {
           ContentfulPages: {
             title: node => node.title,
             slug: node => node.slug,
-            body: node => node.body.raw,
+            body: node => node.childMarkdownRemark.rawMarkdownBody,
           },
           ContentfulServices: {
             title: node => node.title,
