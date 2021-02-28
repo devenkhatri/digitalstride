@@ -25,7 +25,7 @@ const IndexPage = (props) => {
         title: node.title,
         image: node.serviceImage,
         url:`/service/${node.slug}`,
-        text: node.childContentfulServicesExcerptTextNode.childMarkdownRemark.html
+        text: (node.childContentfulServicesExcerptTextNode && node.childContentfulServicesExcerptTextNode.childMarkdownRemark.html) || ""
       });
     });
   }

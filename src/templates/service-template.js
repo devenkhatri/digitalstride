@@ -7,19 +7,16 @@ import HeroSection from '../components/HeroSection'
 import Img from 'gatsby-image'
 
 const ServiceTemplate = (props) => {
-  const { data: { contentfulServices: { title, childContentfulServicesExcerptTextNode, childContentfulServicesDescriptionTextNode, serviceImage, description } } } = props
+  const { data: { contentfulServices: { title, excerpt, shortDescription, serviceImage, description } } } = props
   return (
     <Layout>
       <SEO title={title} />
-      <HeroSection title={title} content={childContentfulServicesExcerptTextNode.childMarkdownRemark.rawMarkdownBody} className={'is-small is-bold is-primary'} image={serviceImage}/>
+      <HeroSection title={title} content={shortDescription && shortDescription.childMarkdownRemark.html} className={'is-small is-bold is-primary'} image={serviceImage}/>
       <section className="section">
         <div className="container py-4">
           <div className="columns">
-            <div className={`column`}>
-              {/* <Img fluid={serviceImage.fluid} /> */}
-              {childContentfulServicesDescriptionTextNode &&
-                <HTMLContent content={childContentfulServicesDescriptionTextNode.childMarkdownRemark.html} className={"has-text-justified"} />
-              }
+            <div className={`column`}>              
+              <HTMLContent content={description && description.childMarkdownRemark.html} className={"has-text-justified"} />
             </div>            
           </div>
         </div>
@@ -35,17 +32,22 @@ export const serviceTemplateQuery = graphql`
     contentfulServices(slug: {eq: $slug}) {
       title
       slug
-      childContentfulServicesExcerptTextNode {
-        childMarkdownRemark {
-          rawMarkdownBody
-        }
-      }
       serviceImage {
         fluid {
           ...GatsbyContentfulFluid
         }
       }
-      childContentfulServicesDescriptionTextNode {
+      excerpt {
+        childMarkdownRemark {
+          html
+        }
+      }
+      shortDescription {
+        childMarkdownRemark {
+          html
+        }
+      }
+      description {
         childMarkdownRemark {
           html
         }
