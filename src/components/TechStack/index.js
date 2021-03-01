@@ -8,8 +8,10 @@ const TechStack = (props) => {
             <h4 className="subtitle has-text-centered">{subtitle}</h4>
             <div className='columns box is-multiline is-centered is-vcentered'>
                 {logos && logos.map((item) => (
-                    <div className='column is-2 has-text-centered px-6 py-1'>
-                        <img src={item.image} title={item.title} />                        
+                    <div className='column is-2 has-text-centered py-1'>
+                        <div className="column is-10-desktop">
+                            <img src={item.image} title={item.title} />
+                        </div>
                     </div>
                 ))}
             </div>
